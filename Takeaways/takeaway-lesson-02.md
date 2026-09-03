@@ -287,4 +287,46 @@ console.log(a / b);
     console.log(x--); // return 9
     console.log(x); // return 8
     ```
+## 2.16 Additional Knowledge
+### 2.16.1 Remainder Operator (Toán tử chia dư)
 
+`%` will only return the remainder
+```
+console.log(3%3); // return 0 because 3 divided by 3 leaves a remainder of 0
+console.log(3%2); // return 1 because 3 is not divisible by 2 leaves a remainder of 1
+console.log(3%1); // return 0 because 3 divided by 1 leaves a remainder of 0
+console.log(1%2); // return 1 because 1 is not divisible by 2 leaves a remainder of 1
+console.log(100%80); // return 20 because 100 is not devisible by 80 leaves a remainder of 20
+```
+
+Apply these to find even and odd numbers
+
+```
+const a = 6;
+console.log(a%2); // return 0 because 6 devided by 2 leaves a remainder of 0
+// => 6 is an even number
+
+const b = 5;
+console.log(b%2); // return 0 because 5 is not devisible by 2 leaves a remainder of 0
+// => 5 is an odd number
+```
+
+### 2.16.2 Print String and Variable
+
+- Use `+`
+    ```
+    const myHeight = 181;
+    const myWeight = 63;
+
+    console.log("My height is "+myHeight+" cm and my weight is "+myWeight+" kg.");
+    // Print: My height is 181 cm and my weight is 63 kg.
+    ```
+- Use `,`
+    ```
+    const myHeight = 181;
+    const myWeight = 63;
+
+    console.log("My height is",myHeight,"cm and my weight is",myWeight,"kg.");
+    // Print: My height is 181 cm and my weight is 63 kg.
+    ```
+**Note**: If use `,` then no need to add more some `space`.
