@@ -70,7 +70,7 @@ Use `git log` to return a list of commitations order by desc. Content of a commi
     ```
     or
     ```
-    git config list
+    git config -l
     ```
 
 ## 2.6 Git convention
@@ -143,7 +143,7 @@ To run this simple program, do steps below:
 
 - Comment by hotkeys
 
-    Highlight your code that you wanna comment; Press Ctrl + / 
+    Highlight your code that you wanna comment; Press Ctrl + `/` 
 
 ## 2.10 Variable and Constant in JavaScript
 | Feature | Variable | Constant |
