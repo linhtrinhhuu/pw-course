@@ -109,3 +109,29 @@ git config --global core.editor "vim"
 # Nếu muốn chuyển từ Vim sang default editor (VCS) thì:
 git config --global --unset core.editor
 ```
+
+## 5. Git vs GitHub: Rebase, Squash & Conflict Management
+
+### 5.1 Bản chất
+* **Git (Local):** Công cụ quản lý phiên bản dưới máy, cho phép can thiệp tỉ mỉ và toàn quyền chỉnh sửa lịch sử commit bằng dòng lệnh.
+* **GitHub (Remote):** Nơi lưu trữ repository trực tuyến, cung cấp giao diện đồ họa (UI) để đơn giản hóa các thao tác Git khi làm việc nhóm.
+
+---
+
+### 5.2 Các tính năng tương đương trên GitHub UI
+
+#### 🔀 Merge Pull Request (PR)
+GitHub tích hợp sẵn 3 cơ chế merge ngay trên nút bấm:
+* **Create a merge commit:** Tương tự `git merge` (giữ nguyên lịch sử rẽ nhánh).
+* **Squash and merge:** Tự động gộp tất cả commit trong PR thành 1 commit duy nhất rồi mới đưa vào nhánh chính.
+* **Rebase and merge:** Tự động chuyển các commit trong PR lên đỉnh nhánh chính (tạo linear history).
+
+#### 🛠️ Resolve Conflicts
+* Khi PR bị xung đột với nhánh chính, GitHub cung cấp giao diện trực quan (**Resolve conflicts**) để sửa trực tiếp trên web mà không cần thao tác qua Terminal/Vim.
+
+---
+
+### 5.3 Quy trình làm việc chuẩn (Best Practices)
+1. **At Local:** Dùng `git rebase` và `squash` để dọn dẹp lịch sử commit sạch sẽ trước khi `push` lên remote.
+2. **On GitHub:** Tạo **Pull Request** để đồng nghiệp review code.
+3. **Merge PR:** Sử dụng tùy chọn **Squash and merge** hoặc **Rebase and merge** trên GitHub để chốt code vào nhánh `main`.
