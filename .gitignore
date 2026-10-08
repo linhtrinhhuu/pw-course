@@ -8,3 +8,4 @@ node_modules/
 /playwright/.auth/
 demos.js
 tests/practice.spec.ts
+tests/practice.page.ts
