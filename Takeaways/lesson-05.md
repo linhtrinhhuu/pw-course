@@ -175,3 +175,63 @@ await hoverLocator.hover(); // hover on position of locator
 page.on('dialog', async dialog => dialog.accept());
 await clickButton.click(); // Although on UI, after click button then appear dialog. We have to put the dialog code row before click button action.
 ```
+
+## 5.3 Loops Advance
+### 5.3.1 for in
+- With Object
+    ```JavaScript
+    const person = {
+        name: "Linh",
+        age: 18,
+        city: "Hanoi"
+    };
+
+    for (let key in person){
+        console.log(`${key}: ${person[key]}`);
+    }
+    // Output
+    // name: Linh
+    // age: 18
+    // city: Hanoi
+    ```
+- With Array (Not Recommended)
+    ```JavaScript
+    const numbers = [0, 1, 2];
+
+    for (let num in numbers){
+        console.log(num);
+    }
+    // Output
+    // 0
+    // 1
+    // 2
+    ```
+### 5.3.2 forEach
+Note: This loop can not use `break` and `continue`.
+```JavaScript
+const numbers = [0, 1, 2];
+
+numbers.forEach(num => {
+    console.log(num);
+});
+// Output
+// 1
+// 2
+// 3
+```
+
+## 5.4 XPath Advance
+**Structure**: //tagname[@attribute='value']/relationship::tagname[@attribute='value']
+
+**Attributes**: parent, child, ancestor, descendant, following, preceding, following-sibling, preceding-sibling
+- `//*` select all tags
+- `//form/child::button` select button tag that is child of form tag 
+- `//form/child::*` select all tags that is child of `form` tag
+- `//form/descendant::input` select `input` tag that is descendant of `form` tag 
+- `//form/descendant::input[@type='email' or @type = 'password']` select `input` tag that have email type or password type and is descendant of `form` tag
+- `//h1[text()='Xin chào']` select text of `h1` tag
+- `//h1[normalize-space()='Xin chào']` select text with trim space of `h1` tag
+- `//h1[contains(text(), 'Xin chào')]` select a text in a string of `h1` tag
+
+## 5.5 CSS Selector
+Refer CSS Selector Cheat Sheet
